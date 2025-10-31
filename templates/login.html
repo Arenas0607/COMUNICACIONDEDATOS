@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TICKIN - Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            text-align: center;
+            width: 320px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 48px;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            outline: none;
+            text-align: center;
+            font-size: 14px;
+            background-color: white;
+            color: black;
+        }
+
+        input::placeholder {
+            color: gray;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: #ff2b2b;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 15px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background-color: #e02020;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>TICKIN</h1>
+        <form action="#" method="post">
+            <input type="text" placeholder="USERNAME" name="username" required>
+            <input type="password" placeholder="PASSWORD" name="password" required>
+            <button type="submit">INGRESAR</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticketin Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>Bienvenido {{ username }} ({{ role }})</h2>
+    <div id="chat-box"></div>
+    <input id="msg" type="text" placeholder="Escribe un mensaje...">
+    <button onclick="sendMessage()">Enviar</button>
+    <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+</div>
+
+<script>
+    var socket = io();
+    socket.on('message', function(msg) {
+        let chatBox = document.getElementById('chat-box');
+        chatBox.innerHTML += `<p>${msg}</p>`;
+        chatBox.scrollTop = chatBox.scrollHeight;
+    });
+
+    function sendMessage() {
+        let msg = document.getElementById('msg').value;
+        socket.send(msg);
+        document.getElementById('msg').value = '';
+    }
+</script>
+</body>
+</html>
